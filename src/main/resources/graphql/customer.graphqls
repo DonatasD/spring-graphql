@@ -1,0 +1,27 @@
+type Customer {
+    id: ID!
+    name: String!
+    books: [Book]!
+}
+
+input CustomerCreateInput {
+    name: String!
+    books: [ID]
+}
+
+input CustomerUpdateInput {
+    id: ID!
+    name: String!
+    books: [ID]
+}
+
+extend type Query {
+    customers: [Customer]!
+    customer(id: ID!): Customer!
+}
+
+extend type Mutation {
+    createCustomer(input: CustomerCreateInput!): Customer!
+    updateCustomer(input: CustomerUpdateInput!): Customer!
+    deleteCustomer(id: ID!): ID!
+}

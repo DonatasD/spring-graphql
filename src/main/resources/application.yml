@@ -1,0 +1,19 @@
+graphql:
+  servlet:
+    exception-handlers-enabled: true
+    context-setting: per_request_with_instrumentation
+spring:
+  datasource:
+    url: jdbc:h2:./db/testdb;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+logging:
+  level:
+    com:
+      donatasd:
+        api: debug
+
